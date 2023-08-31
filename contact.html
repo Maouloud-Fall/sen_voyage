@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sen_Voyages</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="img/favicon.ico" rel="icon">
+        <link href="img/apple-favicon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet"> 
+
+        <!-- Vendor CSS File -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="vendor/slick/slick.css" rel="stylesheet">
+        <link href="vendor/slick/slick-theme.css" rel="stylesheet">
+        <link href="vendor/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Main Stylesheet File -->
+        <link href="css/hover-style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+
+        <style>
+
+.info-item h3, .info-item p {
+            color: gray; /* Couleur grise pour les titres et les contenus */
+        }
+
+            /* Styles pour les éléments d'adresse, e-mail et mobile */
+        .info-item h3 {
+            color: rgba(162, 158, 158, 0.929); /* Couleur grise pour les titres (Address, E-mail, Mobile) */
+        }
+        
+        .info-item p {
+            color: white; /* Couleur grise pour les contenus (adresse, e-mail, mobile) */
+        }
+        
+        .info-item i {
+            color: white; /* Couleur grise pour les icônes */
+        }
+
+            /* Styles pour le footer */
+            #footer {
+                background-color: blue; /* Couleur bleue pour le fond du footer */
+                color: white; /* Texte en couleur blanche pour contraster avec le fond bleu */
+                padding: 20px 0;
+            }
+            
+            #footer a {
+                color: white; /* Couleur du lien en blanc */
+            }
+        </style>
+
+
+
+
+    </head>
+
+    <body>
+        <!-- Header Section Start -->
+        <header id="header">
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="logo"></a>
+            
+            <div class="mobile-menu-btn"><i class="fa fa-bars"></i></div>
+            <nav class="main-menu top-menu">
+                <ul>
+                    <li class="active"><a href="index.html">Accueil</a></li>
+                    <li><a href="apropos.html">A propos</a></li>
+                    <li><a href="vol.html">Vols</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="login.html">S'identifier</a></li>
+                    <li><a href="contact.html">Nous contacter</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Header Section End -->
+        
+        <!-- Contact Section Start -->
+        <div id="contact">
+            <div class="container">
+                <div class="section-header">
+                    
+                    <center><h2 style="background-color: blue;">CONTACTER NOUS</h2></center>
+
+                     <p style="font-weight: bold; color: black;">
+        <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in mi libero. Quisque convallis, enim at venenatis tincidunt.</strong>
+        </p>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row contact-info">
+                            <div class="col-md-4">
+                                <div class="info-item">
+                                    <i class="fa fa-map-marker"></i>
+                                    <h3>Address</h3>
+                                    <p >10eme,Thies</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="info-item">
+                                    <i class="fa fa-envelope"></i>
+                                    <h3>E-mail</h3>
+                                    <p><a href="mailto:senvoyagemail@gmail.com">senvoyagemail@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="info-item">
+                                    <i class="fa fa-phone"></i>
+                                    <h3>Mobile</h3>
+                                    <p><a href="tel:+221 77 699 38 74">+221 77 699 38 74</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="contact-form">
+                            <div id="success"></div>
+                            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                                <div class="form-row">
+                                    <div class="control-group col-sm-6">
+                                        <label>Prenom/Nom</label>
+                                        <input type="text" class="form-control" id="name" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group col-sm-6">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" id="email"  />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label>Subject</label>
+                                    <input type="text" class="form-control" id="subject" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <label>Message</label> 
+                                    <textarea class="form-control" id="message" rows="5"></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <center><div class="button"><button type="submit" id="sendMessageButton">Envoie un message</button></div></center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="bg-section" style="background-color: rgb(0, 221, 255); color: white;">
+                <div class="mon-text" style="text-align: center;">
+                  
+                     <p><strong>N'hesitez pas a nous</strong></p>
+                    <p><strong>sommes</strong></p> 
+                    <p><strong>toujours disponible</strong></p>
+                </div>
+                <div id="bg-section" style="background-color: blue;">
+                </div>
+                <div id="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="social">
+                                    <a href=""><li class="fa fa-facebook-f"></li></a>
+                                    <a href=""><li class="fa fa-twitter"></li></a>
+                                    <a href=""><li class="fa fa-linkedin"></li></a>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <p>@2023 Sen Voyage - Touts droits reservés</p>
+                            </div>
+                        </div>   
+                            
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Contact Section End -->
+        
+        <!-- Footer Section Start -->
+       
+        <!-- Footer Section End -->
+        
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- Vendor JavaScript File -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/easing/easing.min.js"></script>
+        <script src="vendor/stickyjs/sticky.js"></script>
+        <script src="vendor/superfish/hoverIntent.js"></script>
+        <script src="vendor/superfish/superfish.min.js"></script>
+        <script src="vendor/wow/wow.min.js"></script>
+        <script src="vendor/slick/slick.min.js"></script>
+        <script src="vendor/tempusdominus/js/moment.min.js"></script>
+        <script src="vendor/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="js/jqBootstrapValidation.min.js"></script>
+        <script src="js/contact.js"></script>
+        
+        <!-- Main Javascript File -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
