@@ -452,7 +452,7 @@ h6 {
     height: 1px;
     bottom: 0;
     left: calc(50% - 50px);
-    background: #666;
+    background: #313030;
     z-index: 99;
 }
 
@@ -674,15 +674,15 @@ h6 {
 
 #about .content-col a {
     display: inline-block;
-    background: #222222;
+    background: #00F;
     font-weight: 400;
-    color: #00CED1;
+    color: #fff;
     padding: 8px 30px;
     border-radius: 30px;
 }
 
 #about .content-col a:hover {
-    background: #00CED1;
+    background: #00F;
     color: #222222;
 }
 
@@ -1294,12 +1294,13 @@ input::-ms-input-placeholder {
     height: 40px;
     padding: 5px 10px;
     color: #ffffff;
+   
     font-size: 20px;
     border-radius: 30px;
 }
 
 #footer .social a:hover {
-    background: #ffffff;
+    
     color: #1AA4FF;
 }
 
@@ -1308,6 +1309,7 @@ input::-ms-input-placeholder {
     padding: 0;
     width: 100%;
     text-align: center;
+    
 }
 
 #footer ul li {
@@ -1318,6 +1320,7 @@ input::-ms-input-placeholder {
     padding: 0 10px 0 3px;
     line-height: 15px;
     border-right: 1px solid #ffffff;
+    
 }
 
 #footer ul li:last-child {
