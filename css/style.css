@@ -21,7 +21,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-    color: #5f55bb;
+    color: #00CED1;
     outline: none;
     text-decoration: none;
 }
@@ -422,14 +422,14 @@ h6 {
 #welcome a {
     display: inline-block;
     padding: 7px 30px;
-    color: #00CED1;
-    background: #222222;
+    color: #fffdfd;
+    background: #3002e9;
     border-radius: 30px;
 }
 
 #welcome a:hover {
-    color: #222222;
-    background: #00CED1;
+    color: #fffdfd;
+    background: #3002e9;
 }
 
 /* ================================================= */
