@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 $serveur = "localhost"; // Adresse du serveur MySQL
 $utilisateur = "root"; // Nom d'utilisateur MySQL
 $motdepasse = ""; // Mot de passe MySQL
-$basededonnees = "remplir_base"; // Nom de la base de données
+$basededonnees = "sen_voyage"; // Nom de la base de données
 
 $connexion = mysqli_connect($serveur, $utilisateur, $motdepasse, $basededonnees);
 
@@ -16,27 +16,42 @@ if (!$connexion) {
 }
 
 // Vérifier si le formulaire a été soumis
+// Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupérer les valeurs depuis $_POST
     $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : '';
     $nom = isset($_POST['nom']) ? $_POST['nom'] : '';
     $telephone = isset($_POST['telephone']) ? $_POST['telephone'] : '';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $date_d = isset($_POST['date-d']) ? $_POST['date-d'] : '';
-    $date_a = isset($_POST['date-a']) ? $_POST['date-a'] : '';
+    $date_d = isset($_POST['date_d']) ? $_POST['date_d'] : '';
+    $date_a = isset($_POST['date_a']) ? $_POST['date_a'] : '';
     $passager = isset($_POST['passager']) ? $_POST['passager'] : '';
     $message = isset($_POST['message']) ? $_POST['message'] : '';
 
     // Vérifiez si les champs obligatoires ne sont pas vides avant d'exécuter la requête SQL
     if (!empty($prenom) && !empty($nom) && !empty($telephone) && !empty($email)) {
-        // Préparation de la requête SQL et exécution
-        $requete = "INSERT INTO users (prenom, nom, telephone, email, date_d, date_a, passager, message) VALUES ('$prenom', '$nom', '$telephone', '$email', '$date_d', '$date_a', '$passager', '$message')";
+        // Assurez-vous que $passager est un nombre valide
+        if (is_numeric($passager)) {
+            // Préparation de la requête SQL et exécution
+            $requete = "INSERT INTO users (prenom, nom, telephone, email, date_d, date_a, passager, message) 
+                        VALUES ('$prenom', '$nom', '$telephone', '$email', '$date_d', '$date_a', '$passager', '$message')";
 
-        echo "Données insérées avec succès !";
+            if (mysqli_query($connexion, $requete)) {
+                //echo "Données insérées avec succès !";
+            } else {
+                echo "Erreur lors de l'insertion des données : " . mysqli_error($connexion);
+            }
+        } else {
+            echo "Le nombre de passagers doit être un nombre valide.";
+        }
     } else {
         echo "Veuillez remplir tous les champs obligatoires.";
     }
 }
+
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -79,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="apropos.html">A propos</a></li>
                 <li><a href="vol.html">Vols</a></li>
-                <li class="active"><a href="reservation.html">Reservation</a></li>
+                <li class="active"><a href="reservation.php">Reservation</a></li>
                 <li><a href="login.html">S'identifier</a></li>
                 <li><a href="contact.html">Nous contacter</a></li>
             </ul>
@@ -188,19 +203,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
                                     <label>Date de départ</label>
-                                    <input type="date" class="form-control datetimepicker-input" name="date_d" id="date-d" data-toggle="datetimepicker" data-target="#date-1" placeholder="jj/mm/aa" required="required" data-validation-required-message="Please enter date"/>
+                                    <input type="date" class="form-control datetimepicker-input" name="date_d" id="date_d" data-toggle="datetimepicker" data-target="#date-1" placeholder="jj/mm/aa" required="required" data-validation-required-message="Please enter date"/>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group col-sm-6">
                                     <label>Date d'arrivée</label>
-                                    <input type="date" class="form-control datetimepicker-input" name="date_a" id="date-a" data-toggle="datetimepicker" data-target="#date-2" placeholder="jj/mm/aa" required="required" data-validation-required-message="Please enter date"/>
+                                    <input type="date" class="form-control datetimepicker-input" name="date_a" id="date_a" data-toggle="datetimepicker" data-target="#date-2" placeholder="jj/mm/aa" required="required" data-validation-required-message="Please enter date"/>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
                                     <label>Passager</label>
-                                    <select class="custom-select" name="message" id="passager" required="required" data-validation-required-message="Please select one"/>
+                                    <select class="custom-select" name="passager" id="passager" required="required" data-validation-required-message="Please select one"/>
                                         <option value="0">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -219,7 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             <div class="control-group">
                                 <label>Demande spéciale</label>
-                                <input type="text" class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your special request" />
+                                <input type="text" class="form-control" name="message" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your special request" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="button"><button type="submit" id="bookingButton">Réserve maintenant</button></div>
